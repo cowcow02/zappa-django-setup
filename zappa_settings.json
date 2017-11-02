@@ -1,0 +1,10 @@
+{
+  "dev": {
+    "aws_region": "us-east-1",
+    "django_settings": "app.settings_dev",
+    "project_name": "my-zappa-function-name",
+    "runtime": "python3.6",
+    "s3_bucket": "my-zappa-bucket",
+    "xray_tracing": true
+  }
+}

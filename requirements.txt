@@ -1,0 +1,9 @@
+aws-xray-sdk
+boto
+django==1.11
+django-cors-headers==1.2.2
+django-storages
+psycopg2
+zappa
+zappa-django-utils
+raven

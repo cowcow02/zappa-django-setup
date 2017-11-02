@@ -1,0 +1,11 @@
+machine:
+  timezone:
+    UTC
+test:
+  override:
+    - echo "no test"
+deployment:
+  staging:
+    branch: master
+    commands:
+      - sh -x ./deploy.sh dev
