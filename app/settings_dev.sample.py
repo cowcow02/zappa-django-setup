@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app.slackmessageprocessor',
     'aws_xray_sdk.ext.django',
     'raven.contrib.django.raven_compat',
     'app.myapp',

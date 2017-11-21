@@ -1,4 +1,4 @@
 .idea
 src
 __pycache__
-app/settings_dev.py
+static
