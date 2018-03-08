@@ -1,11 +1,21 @@
 machine:
   timezone:
     UTC
+  python:
+    version: 3.6.1
 test:
   override:
     - echo "no test"
 deployment:
   staging:
+    branch: staging
+    commands:
+      - zappa deploy dev
+      - zappa manage dev "migrate --noinput"
+      - zappa manage dev "collectstatic --noinput"
+  production:
     branch: master
     commands:
-      - sh -x ./deploy.sh dev
+      - zappa deploy production
+      - zappa manage production "migrate --noinput"
+      - zappa manage production "collectstatic --noinput"
