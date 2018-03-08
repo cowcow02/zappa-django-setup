@@ -5,7 +5,7 @@ machine:
     version: 3.6.1
 test:
   override:
-    - echo "no test"
+    - python manage.py test --verbosity 2 --failfast --settings=app.settings_circle
 deployment:
   staging:
     branch: staging
