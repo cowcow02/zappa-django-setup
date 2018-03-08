@@ -21,15 +21,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'xxxxxxxxxxxxxxxxxxxxxxxx'  # todo change to your own Django secret key
-my_apigateway_host_name = 'xxxxxxxxxx.execute-api.us-east-1.amazonaws.com'  # include your host name after running "zappa deploy"
-my_sentry_dsn = 'https://xxxxxxxxxxxxxxxxxxxxxxxx:xxxxxxxxxxxxxxxxxxxxxxxx@sentry.io/123456'  # if you use Sentry, add the DSN here
+SENTRY_DSN = 'https://xxxxxxxxxxxxxxxxxxxxxxxx:xxxxxxxxxxxxxxxxxxxxxxxx@sentry.io/123456'  # if you use Sentry, add the DSN here
 my_aws_xray_tracing_name = 'my-serverless'  # if you use AWS X-Ray, specify the tracing name here
 my_static_file_bucket = 'my-serverless-static'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [my_apigateway_host_name]
+ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
@@ -68,7 +67,7 @@ XRAY_RECORDER = {
 }
 
 RAVEN_CONFIG = {
-    'dsn': ('%s' % my_sentry_dsn),
+    'dsn': ('%s' % SENTRY_DSN),
     # If you are using git, you can also automatically configure the
     # release based on the git info.
     # 'release': raven.fetch_git_sha(os.path.dirname(os.pardir)),
